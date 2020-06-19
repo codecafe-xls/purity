@@ -1,0 +1,7 @@
+ARG_ENABLE('purify', 'purify support', 'no');
+
+if (PHP_PURIFY != 'no') {
+	AC_DEFINE('HAVE_PURIFY', 1, 'purify support enabled');
+
+	EXTENSION('purify', 'purify.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
